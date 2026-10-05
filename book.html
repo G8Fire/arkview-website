@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Booking | ArkView</title>
+  <meta name="description" content="Request an ArkView photography or drone package.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">ARK<span>VIEW</span></a>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; Packages</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="book.html" class="btn">Request a Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Request a Booking</h1>
+        <p>Choose a package and tell us about your project. We&rsquo;ll contact you to confirm details and set a date and time.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container form-wrap">
+        <form class="form" id="booking-form" novalidate>
+          <fieldset>
+            <legend>1. Choose a package</legend>
+            <div class="field">
+              <label for="package">Package</label>
+              <select id="package" name="package" required>
+                <option value="">Select a package&hellip;</option>
+                <optgroup label="Real Estate">
+                  <option value="Real Estate - Essentials">Essentials</option>
+                  <option value="Real Estate - Photo + Aerial">Photo + Aerial</option>
+                  <option value="Real Estate - Premium">Premium</option>
+                </optgroup>
+                <optgroup label="Drone">
+                  <option value="Drone - Aerial Photos">Aerial Photos</option>
+                  <option value="Drone - Aerial Photo + Video">Aerial Photo + Video</option>
+                </optgroup>
+                <optgroup label="Events">
+                  <option value="Events - Event Highlights">Event Highlights</option>
+                  <option value="Events - Full Event Coverage">Full Event Coverage</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option value="Other - Inspections">Inspections</option>
+                  <option value="Other - Construction Progress">Construction Progress</option>
+                  <option value="Other - Land & Farm">Land &amp; Farm</option>
+                </optgroup>
+                <option value="Not sure - recommend one">Not sure &mdash; recommend one for me</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Your information</legend>
+            <div class="form__row">
+              <div class="field">
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="company">Company / Brokerage <span class="hint">(optional)</span></label>
+              <input id="company" name="company" autocomplete="organization">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Project details</legend>
+            <div class="field">
+              <label for="location">Property address or event location</label>
+              <input id="location" name="location" autocomplete="street-address" required>
+            </div>
+            <div class="form__row">
+              <div class="field">
+                <label for="timeframe">Preferred timeframe <span class="hint">(optional)</span></label>
+                <select id="timeframe" name="timeframe">
+                  <option value="">No preference</option>
+                  <option>As soon as possible</option>
+                  <option>Within 1 week</option>
+                  <option>Within 2&ndash;4 weeks</option>
+                  <option>More than a month out</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="contactMethod">Best way to reach you</label>
+                <select id="contactMethod" name="contactMethod">
+                  <option>Phone call</option>
+                  <option>Text</option>
+                  <option>Email</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes">Anything else we should know? <span class="hint">(optional)</span></label>
+              <textarea id="notes" name="notes" placeholder="Square footage, event type, special shots you want, etc."></textarea>
+            </div>
+            <!-- Spam trap: hidden from people, bots tend to fill it in -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn">Send Booking Request</button>
+          <p class="form__note">This is a request, not a confirmed appointment. We&rsquo;ll reach out to schedule a date and time.</p>
+          <div class="form__status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo">ARK<span>VIEW</span></a>
+          <p>Real estate photography, drone photography &amp; videography, and aerial event coverage.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="services.html">Services &amp; Packages</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="book.html">Request a Booking</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <!-- TODO: replace with real contact details -->
+            <li><a href="mailto:hello@arkview.com">hello@arkview.com</a></li>
+            <li><a href="tel:+10000000000">(000) 000-0000</a></li>
+            <li>FAA Part 107 Certified</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">&copy; <span data-year></span> ArkView. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
